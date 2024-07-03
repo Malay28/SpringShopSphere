@@ -40,17 +40,17 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry(DOCKER_REGISTRY, DOCKER_REGISTRY_CREDENTIALS) {
-                        sh 'docker tag mysql malayshikhar/mysql:1.0'
-                        sh 'docker push malayshikhar/mysql:1.0'
+                        sh 'docker tag mysql <<Docker hub username>>/mysql:1.0'
+                        sh 'docker push <<Docker hub username>>/mysql:1.0'
                         
-                        sh 'docker tag product-service malayshikhar/product-service:1.0'
-                        sh 'docker push malayshikhar/product-service:version1.0'
+                        sh 'docker tag product-service <<Docker hub username>>/product-service:1.0'
+                        sh 'docker push <<Docker hub username>>/product-service:version1.0'
                         
-                        sh 'docker tag user-service malayshikhar/user-service:1.0'
-                        sh 'docker push malayshikhar/user-service:1.0'
+                        sh 'docker tag user-service <<Docker hub username>>/user-service:1.0'
+                        sh 'docker push <<Docker hub username>>/user-service:1.0'
                         
-                        sh 'docker tag order-service malayshikhar/order-service:1.0'
-                        sh 'docker push malayshikhar/order-service:1.0'
+                        sh 'docker tag order-service <<Docker hub username>>/order-service:1.0'
+                        sh 'docker push <<Docker hub username>>/order-service:1.0'
                     }
                 }
             }
