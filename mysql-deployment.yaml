@@ -14,7 +14,7 @@ spec:
         app: mysql
     spec:
       containers:
-      - image: <<Add your image name>>
+      - image: <<Docker hub username>>/mysql:1.0
         name: mysql
         env:
         - name: MYSQL_ROOT_PASSWORD
